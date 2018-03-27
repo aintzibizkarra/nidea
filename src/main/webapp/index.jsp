@@ -10,6 +10,7 @@
 	<h2>Hello <%=nombre%></h2>
 	<p><%=hora%></p>
 	<a href="generar-mesa">¿Quieres comprar una mesa?</a>
+	 <p><a href="calculadora">Calculadora</a></p>
 	
 	<jsp:include page="templates/footer.jsp"></jsp:include>
 </div>

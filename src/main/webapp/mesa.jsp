@@ -17,16 +17,15 @@
 	
 	<div class="col-sm-6">
 		<form action="generar-mesa" method="post">
-		
-		
+		<div class="form-group">
 			<label for="patas">Numero de patas:</label>
-			<input type="number" name="patas" value="<%=mesa.getNumeroPatas()%>" required>
-			<br>
-			
+			<input type="number" name="patas" class="form-control" value="<%=mesa.getNumeroPatas()%>" required>
+		</div>
+		<div class="form-group">
 			<label for="dimension">Dimension en m2:</label>
-			<input type="number" name="dimension" value="<%=mesa.getDimension()%>" required>
-			<br>
-			
+			<input type="number" name="dimension" value="<%=mesa.getDimension()%>" required class="form-control">
+		</div>
+		<div class="form-group">
 			<label for="material">Selecciona Material:</label>
 			<select name="material">
 				<% for ( int i=0; i < materiales.length; i++ ) { %>
@@ -36,8 +35,8 @@
 					</option>
 				<% } %>
 			</select>
-		
-		
+		</div>
+		<div class="">
 			<p>Color: 
 			   <input type="color" value="<%=mesa.getColor()%>" disabled>
 			</p>
@@ -46,8 +45,8 @@
 				<input type="checkbox" name="custom" onclick="showColor()" id="custom" <%=(mesa.isCustom())?"checked":""%>>
 				<input type="color" name="color" id="color" value="<%=mesa.getColor()%>"> 
 			</p>
+		</div>
 		
-			<br>
 			<input type="submit" value="Calcular Precio">
 			
 			
