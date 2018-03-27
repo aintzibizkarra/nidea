@@ -3,3 +3,23 @@
 img{
 	width:64px;
 }
+
+.logo{
+	width: 150px;
+	height: auto;
+}
+
+.prize{
+	font-size: 2em;
+}
+
+svg{
+	display:block;
+	margin: auto;
+}
+/*******************login***********************/
+
+#login{
+	witdh:500px;
+	margin:auto;
+}
