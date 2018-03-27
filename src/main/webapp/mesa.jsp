@@ -1,3 +1,5 @@
+<%@page import="com.ipartek.formacion.nidea.pojo.Material"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.ipartek.formacion.nidea.pojo.Mesa"%>
 
 <jsp:include page="templates/head.jsp"></jsp:include>
@@ -7,8 +9,8 @@
 <%
 	// recoger atributo del controlador, si es que existe
 	Mesa mesa = (Mesa)request.getAttribute("mesa");
-	String[] materiales = (String[])request.getAttribute("materiales");
-	int[] materialesCodigo = (int[])request.getAttribute("materialesCodigo");
+	ArrayList<Material> materiales = (ArrayList<Material>)request.getAttribute("materiales");
+	
 	
 %>
 
@@ -28,10 +30,12 @@
 		<div class="form-group">
 			<label for="material">Selecciona Material:</label>
 			<select name="material">
-				<% for ( int i=0; i < materiales.length; i++ ) { %>
-					<option value="<%=materialesCodigo[i]%>" 
-					        <%=(mesa.getMaterial().getId()==materialesCodigo[i])?"selected":""%>>
-						<%=materiales[i]%>
+				<% for ( int i=0; i < materiales.size(); i++ ) { 
+					Material m= materiales.get(i);
+				%>
+					<option value="<%=materiales.get(i).getId()%>" 
+					        <%=(mesa.getMaterial().getId()==m.getId())?"selected":""%>>
+						<%=m.getNombre()%> - <%= m.getPrecio()%>&euro;
 					</option>
 				<% } %>
 			</select>
@@ -41,7 +45,7 @@
 			   <input type="color" value="<%=mesa.getColor()%>" disabled>
 			</p>
 			
-			<p>¿ Quieres Personalizar el Color ? 
+			<p>¿Quieres Personalizar el Color ? 
 				<input type="checkbox" name="custom" onclick="showColor()" id="custom" <%=(mesa.isCustom())?"checked":""%>>
 				<input type="color" name="color" id="color" value="<%=mesa.getColor()%>"> 
 			</p>

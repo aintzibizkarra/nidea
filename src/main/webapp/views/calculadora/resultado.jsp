@@ -1,5 +1,6 @@
 <jsp:include page="/templates/head.jsp"></jsp:include>
 <jsp:include page="/templates/navbar.jsp"></jsp:include>
+<jsp:include page="/templates/alert.jsp"></jsp:include>
 
 <div class="container">
 	<h1>Resultado de la operación </h1>

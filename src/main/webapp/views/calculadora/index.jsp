@@ -1,6 +1,7 @@
 <%@page import="com.ipartek.formacion.nidea.controller.CalculadoraController"%>
 <jsp:include page="/templates/head.jsp"></jsp:include>
 <jsp:include page="/templates/navbar.jsp"></jsp:include>
+<jsp:include page="/templates/alert.jsp"></jsp:include>
 
 <div class="container">
 <h1>CALCULADORA</h1>
