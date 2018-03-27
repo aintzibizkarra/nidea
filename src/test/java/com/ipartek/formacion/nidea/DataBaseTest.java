@@ -1,5 +1,6 @@
 package com.ipartek.formacion.nidea;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -42,6 +43,7 @@ public class DataBaseTest {
 	@Test
 	public void testMaterial() {
 		MaterialDAO dao = new MaterialDAO();
+		assertNotNull(dao.getAll());
 
 	}
 
